@@ -37,10 +37,6 @@
 
 		&-text {
 			flex: 1 0 50%;
-
-			.headline {
-				margin-bottom: 2rem;
-			}
 		}
 
 		&-image {
