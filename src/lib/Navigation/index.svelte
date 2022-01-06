@@ -1,32 +1,67 @@
+<script>
+	import Hamburger from './Hamburger.svelte';
+
+	$: toggle = false;
+
+	const toggleHandler = (trigger) => {
+		toggle = trigger.detail.toggle;
+	};
+
+	const colapseMenu = () => {
+		toggle = !toggle;
+	};
+</script>
+
 <nav>
-	<div class="max-width">
-		<ul>
-			<div><a href="/">liamwalker</a></div>
-			<li><a href="/">overview</a></li>
-			<li><a href="/women">women</a></li>
-			<li><a href="/men">men</a></li>
-			<li><a href="/landscape">landscape</a></li>
-			<li><a href="/about">about</a></li>
-			<li><a href="/contact">contact</a></li>
+	<div class="max-width" aria-expanded={toggle.toString()}>
+		<div class="logo">
+			<Hamburger on:toggle={toggleHandler} {toggle} />
+			<a href="/">liamwalker</a>
+		</div>
+		<ul aria-expanded={toggle.toString()}>
+			<li on:click={colapseMenu}><a href="/">overview</a></li>
+			<li on:click={colapseMenu}><a href="/women">women</a></li>
+			<li on:click={colapseMenu}><a href="/men">men</a></li>
+			<li on:click={colapseMenu}><a href="/landscape">landscape</a></li>
+			<li on:click={colapseMenu}><a href="/about">about</a></li>
+			<li on:click={colapseMenu}><a href="/contact">contact</a></li>
 		</ul>
 	</div>
 </nav>
 
 <style lang="scss">
+	@use '../../styles/mixins';
+
+	.max-width {
+		display: flex;
+		justify-content: space-between;
+
+		&[aria-expanded='true'] {
+			height: 100vh;
+		}
+	}
+
 	nav {
 		position: fixed;
 		width: 100%;
-		padding: 1rem;
+		padding: 1rem 0;
 		background-color: var(--col1);
 		color: var(--col2);
+
+		.logo {
+			@include mixins.set-breakpoint('tablet') {
+				display: flex;
+				flex-flow: row-reverse;
+				justify-content: space-between;
+				align-items: center;
+				height: 3rem;
+				width: 100%;
+			}
+		}
 
 		ul {
 			display: flex;
 			gap: 2rem;
-
-			& > div {
-				margin-right: auto;
-			}
 
 			li {
 				position: relative;
@@ -58,11 +93,22 @@
 				}
 			}
 
-			a {
-				font-size: inherit;
-				text-decoration: none;
-				color: inherit;
+			@include mixins.set-breakpoint('tablet') {
+				display: none;
+				position: absolute;
+				flex-direction: column;
+				height: 100vh;
+				justify-content: center;
+
+				&[aria-expanded='true'] {
+					display: flex;
+				}
 			}
+		}
+		a {
+			font-size: inherit;
+			text-decoration: none;
+			color: inherit;
 		}
 	}
 </style>
