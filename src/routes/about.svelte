@@ -22,6 +22,8 @@
 </section>
 
 <style lang="scss">
+	@use '../styles/mixins';
+
 	.section {
 		display: flex;
 		justify-content: center;
@@ -35,19 +37,30 @@
 		height: 100%;
 		gap: 4rem;
 
+		@include mixins.set-breakpoint('tablet') {
+			flex-direction: column-reverse;
+			gap: 2rem;
+		}
+
 		&-text {
 			flex: 1 0 50%;
 		}
 
 		&-image {
+			margin-top: var(--nav-ofst);
 			height: 80%;
 			max-height: 70rem;
 			flex: 1 0 40%;
+			transition: all 0.5s;
 
-			img {
+			@include mixins.set-breakpoint('desktopX') {
+				height: 66%;
+			}
+
+			@include mixins.set-breakpoint('tablet') {
+				height: 20rem;
 				width: 100%;
-				height: 100%;
-				object-fit: cover;
+				margin-top: 6rem;
 			}
 		}
 	}

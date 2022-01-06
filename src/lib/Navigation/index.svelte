@@ -2,7 +2,7 @@
 	<div class="max-width">
 		<ul>
 			<div><a href="/">liamwalker</a></div>
-			<li><a href="/overview">overview</a></li>
+			<li><a href="/">overview</a></li>
 			<li><a href="/women">women</a></li>
 			<li><a href="/men">men</a></li>
 			<li><a href="/landscape">landscape</a></li>
@@ -14,6 +14,8 @@
 
 <style lang="scss">
 	nav {
+		position: fixed;
+		width: 100%;
 		padding: 1rem;
 		background-color: var(--col1);
 		color: var(--col2);

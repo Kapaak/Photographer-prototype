@@ -1,0 +1,29 @@
+@use 'mixins';
+
+.headline {
+	font-size: 5rem;
+	margin-bottom: 2rem;
+
+	@include mixins.set-breakpoint('desktopX') {
+		font-size: 4.2rem;
+	}
+	@include mixins.set-breakpoint('desktop') {
+		font-size: 3.5rem;
+	}
+	@include mixins.set-breakpoint('tablet') {
+		font-size: 3.5rem;
+		margin-bottom: 1rem;
+	}
+}
+
+.text {
+	font-size: 1.8rem;
+	line-height: 2;
+
+	@include mixins.set-breakpoint('desktopX') {
+		font-size: 1.6rem;
+	}
+	@include mixins.set-breakpoint('tablet') {
+		line-height: 1.9;
+	}
+}

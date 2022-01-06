@@ -17,49 +17,10 @@
 	<slot />
 </main>
 
-<style global>
-	*,
-	*::before,
-	*::after {
-		margin: 0;
-		padding: 0;
-		box-sizing: border-box;
-	}
-
-	html {
-		font-size: 62.5%;
-	}
-
-	body {
-		font-size: 1.6rem;
-		font-family: 'Poppins', sans-serif;
-	}
-
-	:root {
-		--col1: rgb(24, 24, 24);
-		--col2: rgb(228, 228, 228);
-	}
-
-	.section {
-		height: 100vh;
-		min-height: 100vh;
-	}
-
-	.max-width {
-		max-width: 130rem;
-		margin: 0 auto;
-		width: 100%;
-		height: 100%;
-		padding: 0 4rem;
-	}
-
-	.headline {
-		font-size: 5rem;
-		margin-bottom: 2rem;
-	}
-
-	.text {
-		font-size: 1.8rem;
-		line-height: 2;
-	}
+<style global lang="scss">
+	@use '../styles/hover-effect';
+	@use '../styles/resets';
+	@use '../styles/variables';
+	@use '../styles/components';
+	@use '../styles/layout';
 </style>

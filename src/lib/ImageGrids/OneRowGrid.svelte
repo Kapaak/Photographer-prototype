@@ -5,7 +5,7 @@
 <main>
 	<div class="photo-grid">
 		{#each photos as photo, i (i)}
-			<div class="box">
+			<div class="box filter-grayscale">
 				<img src={photo} alt="" />
 			</div>
 		{/each}
@@ -14,19 +14,13 @@
 
 <style lang="scss">
 	.photo-grid {
-		display: flex;
+		display: grid;
 		width: 100%;
 		gap: 1rem;
+		grid-template-columns: repeat(4, 1fr);
 
 		.box {
-			flex: 1 1 30%;
 			height: 18rem;
-
-			img {
-				width: 100%;
-				height: 100%;
-				object-fit: cover;
-			}
 		}
 	}
 </style>
