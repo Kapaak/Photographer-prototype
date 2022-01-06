@@ -26,6 +26,7 @@
 		justify-content: space-between;
 		width: 2.6rem;
 		height: 2rem;
+		cursor: pointer;
 
 		@include mixins.set-breakpoint('tablet') {
 			display: flex;

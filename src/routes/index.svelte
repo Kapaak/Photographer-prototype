@@ -32,6 +32,5 @@
 
 	.photo {
 		height: 69%;
-		margin-top: var(--nav-ofst);
 	}
 </style>

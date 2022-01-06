@@ -1,11 +1,8 @@
 //I must import this file everytime I want to use mixins
 
 $breakpoints: (
-	'small': (
-		max-width: 767px
-	),
-	'medium': (
-		min-width: 992px
+	'mobile': (
+		max-width: 600px
 	),
 	'tablet': (
 		max-width: 700px

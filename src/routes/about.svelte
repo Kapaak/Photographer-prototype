@@ -47,7 +47,7 @@
 		}
 
 		&-image {
-			margin-top: var(--nav-ofst);
+			/* margin-top: var(--nav-ofst); */
 			height: 80%;
 			max-height: 70rem;
 			flex: 1 0 40%;
@@ -60,7 +60,10 @@
 			@include mixins.set-breakpoint('tablet') {
 				height: 20rem;
 				width: 100%;
-				margin-top: 6rem;
+				/* margin-top: 6rem; */
+			}
+			@include mixins.set-breakpoint('mobile') {
+				max-height: 40rem;
 			}
 		}
 	}

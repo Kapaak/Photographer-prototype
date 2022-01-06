@@ -2,7 +2,12 @@
 
 .section {
 	height: 100vh;
-	min-height: 100vh;
+	min-height: calc(100vh - 4.5rem);
+
+	@include mixins.set-breakpoint('mobile') {
+		margin-top: var(--nav-ofst);
+		height: auto;
+	}
 }
 
 .max-width {
@@ -15,7 +20,12 @@
 	@include mixins.set-breakpoint('desktop') {
 		padding: 0 7rem;
 	}
+
 	@include mixins.set-breakpoint('tablet') {
 		padding: 0 5rem;
+	}
+
+	@include mixins.set-breakpoint('mobile') {
+		padding: 2rem;
 	}
 }

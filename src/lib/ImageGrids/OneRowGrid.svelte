@@ -13,6 +13,8 @@
 </main>
 
 <style lang="scss">
+	@use '../../styles/mixins';
+
 	.photo-grid {
 		display: grid;
 		width: 100%;
@@ -21,6 +23,11 @@
 
 		.box {
 			height: 18rem;
+		}
+
+		@include mixins.set-breakpoint('mobile') {
+			grid-template-columns: repeat(2, 1fr);
+			gap: 2rem;
 		}
 	}
 </style>

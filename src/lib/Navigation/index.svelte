@@ -36,17 +36,24 @@
 		display: flex;
 		justify-content: space-between;
 
-		&[aria-expanded='true'] {
-			height: 100vh;
+		@include mixins.set-breakpoint('tablet') {
+			&[aria-expanded='true'] {
+				height: 100vh;
+			}
+		}
+		@include mixins.set-breakpoint('mobile') {
+			padding: 0 2rem;
 		}
 	}
 
 	nav {
 		position: fixed;
+		top: 0;
 		width: 100%;
 		padding: 1rem 0;
 		background-color: var(--col1);
 		color: var(--col2);
+		z-index: 9;
 
 		.logo {
 			@include mixins.set-breakpoint('tablet') {
