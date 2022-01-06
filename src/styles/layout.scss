@@ -2,7 +2,7 @@
 
 .section {
 	height: 100vh;
-	min-height: calc(100vh - 4.5rem);
+	min-height: calc(100vh - var(--nav-ofst));
 
 	@include mixins.set-breakpoint('mobile') {
 		margin-top: var(--nav-ofst);
