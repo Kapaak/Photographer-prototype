@@ -63,7 +63,7 @@
 				/* margin-top: 6rem; */
 			}
 			@include mixins.set-breakpoint('mobile') {
-				max-height: 40rem;
+				max-height: 50vh;
 			}
 		}
 	}
