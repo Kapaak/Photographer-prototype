@@ -64,6 +64,7 @@
 			}
 			@include mixins.set-breakpoint('mobile') {
 				max-height: 50vh;
+				height: 40rem;
 			}
 		}
 	}
